@@ -1,0 +1,23 @@
+name: ${project.name}
+main: net.azisaba.afk.nagashisomen.NagashiSomen
+version: ${project.version}
+author: siloneco
+description: ${project.description}
+website: ${project.url}
+softdepend: ["Multiverse-Core"]
+
+commands:
+  respawnsomen:
+    description: Respawn somen items
+    permission: nagashisomen.command.respawnsomen
+    aliases: ["rs"]
+  spawnadditionalsomen:
+    description: Spawn additional somen item
+    permission: nagashisomen.command.spawnadditionalsomen
+    aliases: ["sas"]
+
+permissions:
+  nagashisomen.command.respawnsomen:
+    default: op
+  nagashisomen.command.spawnadditionalsomen:
+    default: op
