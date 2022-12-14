@@ -4,7 +4,7 @@
 
     <groupId>net.azisaba</groupId>
     <artifactId>NagashiSomen</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 
     <name>${project.artifactId}</name>
     <description>spawn somen plugin</description>

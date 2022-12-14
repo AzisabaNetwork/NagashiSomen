@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -27,7 +28,7 @@ import java.util.List;
 @Getter
 public class NagashiSomen extends JavaPlugin implements Listener {
 
-    private List<Item> somenItems = new ArrayList<>();
+    private final List<Item> somenItems = new ArrayList<>();
     private boolean somenSpawned = false;
     private List<SomenData> dataList = new ArrayList<>();
     private BukkitTask task;
@@ -46,6 +47,8 @@ public class NagashiSomen extends JavaPlugin implements Listener {
 
         Bukkit.getPluginCommand("respawnsomen").setExecutor(new RespawnSomenCommand(this));
         Bukkit.getPluginCommand("spawnadditionalsomen").setExecutor(new SpawnAdditionalSomenCommand(this));
+
+        world.getEntitiesByClass(Item.class).forEach(Entity::remove);
 
         for (int i = Bukkit.getOnlinePlayers().size(); i > 0; i--) {
             if (!somenSpawned) {
